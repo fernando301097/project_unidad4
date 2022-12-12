@@ -1,0 +1,37 @@
+{% extends "../base.html" %} {% block content %}
+
+<div class "row mt-5">
+    <div class="col-md-6"></div>
+        <h2 class="mt3">LISTA DE PROYECTOS</h2>
+    <div class="col-md-6 style="tex-align: rigth">
+        <a href="{% url 'create' %}" class="btn btn-success mt-3">crear proyecto</a>
+    </div>
+</div>
+
+
+<table class="table table-bordered table-hove mt-5">
+    <thead>
+        <tr>
+            <th>Proyecto</th>
+            <th>descripcion</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for proyecto in proyectos %}
+    <tr>
+        <td>{{ proyecto.titulo }}</td>
+        <td>{{ proyecto.descripcion }}</td>
+        <td>
+           
+                <a href="/delete/{{ proyecto.id }}" class="btn btn-danger">Eliminar</a>
+           
+            
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
