@@ -1,14 +1,28 @@
 {% extends "../base.html" %} {% block content %} 
 
-<h2 class="mt-5">CREAR UN NUEVO PROYECTO</h2>
-<FORM method="POST" novalidate class="mt-3">
+<body></body>
+
+<body background="arequipa.jpg" color=>
+    <h2>Registrar proyecto</h2>
+          
+    <FORM method="POST" novalidate class="mt-3">
+        
+        <div class="row">
+        
+        {% csrf_token %}
+        {{ form.as_div }}
     
-    {% csrf_token %}
-    {{ form.as_div }}
+        <button class="btn btn-success" type="submit">Crear</button>
+        <hr>
+        <a href="{% url 'logout' %}" class="btn btn-danger">cerrar session</a>
+        <hr>
+        <a href="{% url 'index' %}" class="btn btn-success">HOME</a>
+    </form>
+</body>
+  
+    
 
-    <button class="btn btn-success" type="submit">Crear</button>
-</form>
-
+</div>
 {% endblock content %}
 
 

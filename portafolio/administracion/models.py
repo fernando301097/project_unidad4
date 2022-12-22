@@ -1,9 +1,9 @@
 from django.db import models
 
 class Proyecto(models.Model):
-    foto = models.ImageField(upload_to='albums/images/')
-    titulo = models.CharField(max_length=50)
-    descripcion = models.CharField(max_length=250)
+    foto = models.CharField(max_length=100)
+    titulo = models.CharField(max_length=100)
+    descripcion = models.CharField(max_length=1000)
     tags = models.CharField(max_length=100)
     url_github = models.URLField()
 

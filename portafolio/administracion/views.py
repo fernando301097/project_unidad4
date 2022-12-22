@@ -14,7 +14,7 @@ class AdministracionView(LoginRequiredMixin, TemplateView):
         context["proyectos"] = Proyecto.objects.all()
         return context
 
-        
+
 class CreateProyecto(LoginRequiredMixin, FormView):
     model = Proyecto
     form_class = ProyectoForm
